@@ -17,6 +17,32 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  const card = document.createElement("div");
+  const headline = document.createElement("div");
+  const author = document.createElement("div");
+  const img_container = document.createElement("div");
+  const img = document.createElement("img");
+  const authorName = document.createElement("span");
+
+  card.className = "card"
+  headline.className = "headline"
+  author.className = "author"
+  img_container.className = "img-container"
+
+  card.appendChild(headline)
+  card.appendChild(author)
+  author.appendChild(img_container)
+  img_container.appendChild(img)
+  author.appendChild(authorName)
+
+  headline.textContent = article.headline
+  authorName.textContent = article.authorName
+  img.src = article.authorPhoto
+
+
+  return card
+  
 }
 
 const cardAppender = (selector) => {
@@ -28,6 +54,47 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+  const results = axios.get('https://lambda-times-api.herokuapp.com/articles')
+
+  results.then((res) => {
+    
+    const selected = document.querySelector(selector)
+
+
+    var articles = res.data.articles.bootstrap;
+    var i;
+    for (i = 0; i < articles.length; i++) {
+      selected.appendChild(Card(articles[i]))
+    }
+
+    articles = res.data.articles.javascript;    
+    for (i = 0; i < articles.length; i++) {
+      selected.appendChild(Card(articles[i]))
+    }
+
+    articles = res.data.articles.jquery;
+    for (i = 0; i < articles.length; i++) {
+      selected.appendChild(Card(articles[i]))
+    }
+
+    articles = res.data.articles.node;    
+    for (i = 0; i < articles.length; i++) {
+      console.log(articles[i])
+      selected.appendChild(Card(articles[i]))
+    }
+
+    articles = res.data.articles.technology;
+    for (i = 0; i < articles.length; i++) {
+      console.log(articles[i])
+      selected.appendChild(Card(articles[i]))
+    }
+
+
+  });
+
+  //return selected
+
 }
 
 export { Card, cardAppender }
