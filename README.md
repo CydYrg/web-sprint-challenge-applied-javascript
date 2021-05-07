@@ -39,6 +39,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 Your must complete all the following steps:
 LETS START
+LETS START 2
 
 - [ ] Step 0 is to link `src/index.js` to the `src/index.html` file using a script tag.
 - [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
