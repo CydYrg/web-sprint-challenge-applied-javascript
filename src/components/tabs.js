@@ -13,6 +13,21 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  const topicsdiv = document.createElement("div");
+  topicsdiv.className = "topics"
+
+
+
+  var i;
+  for (i = 0; i<topics.length ; i++) {
+    const tabb = document.createElement("div");
+    tabb.className = "tab"
+    tabb.textContent = topics[i]
+    topicsdiv.appendChild(tabb) 
+  }
+
+  return topicsdiv
+
 }
 
 const tabsAppender = (selector) => {
