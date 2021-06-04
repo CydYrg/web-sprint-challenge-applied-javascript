@@ -90,9 +90,12 @@ const cardAppender = (selector) => {
 
 
   })
-  //.catch(
-
+  
+  //.catch( I should be doing a catch here )
+  //const topics = res.data.topics
+  //const selectedTabs = document.querySelector(selector)
+  //selectedTabs.appendChild(Card(topics))  
 }
 
 cardAppender("body")
-//export{Card, cardAppender}
+//export{Card, cardAppender} I had issue with .catch so couldnt export cardAppender but wanted to show the dogs on screeen
