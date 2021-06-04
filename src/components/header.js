@@ -11,6 +11,25 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+  const headdiv = document.createElement("div"); 
+  const date_span = document.createElement("span");  
+  const title_h1 = document.createElement("h1");  
+  const temp_span = document.createElement("span");
+
+  headdiv.appendChild(date_span)
+  headdiv.appendChild(title_h1)
+  headdiv.appendChild(temp_span)
+
+  headdiv.className = "header"
+  date_span.className = "date"
+  temp_span.className = "temp"
+
+  date_span.textContent = date
+  title_h1.textContent = title
+  temp_span.textContent = temp
+
+  return headdiv
+  console.log("CEYDA")
 }
 
 const headerAppender = (selector) => {
