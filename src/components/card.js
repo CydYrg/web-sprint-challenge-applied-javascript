@@ -1,3 +1,4 @@
+import axios from 'axios'
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -53,7 +54,7 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   // 
   const results = axios.get('https://lambda-times-api.herokuapp.com/articles')
-
+  
   results.then((res) => {
 
     const selected = document.querySelector(selector)
@@ -88,8 +89,10 @@ const cardAppender = (selector) => {
     }
 
 
-  });
+  })
+  //.catch(
 
 }
 
 cardAppender("body")
+//export{Card, cardAppender}

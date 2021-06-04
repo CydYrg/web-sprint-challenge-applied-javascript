@@ -1,3 +1,4 @@
+import axios from 'axios'
 
 const Tabs = (topics) => {
   // TASK 3
@@ -55,3 +56,4 @@ results.then((res) => {
 }
 
 tabsAppender("body")
+export{Tabs, tabsAppender}

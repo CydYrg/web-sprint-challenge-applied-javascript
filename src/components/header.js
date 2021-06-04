@@ -47,3 +47,4 @@ const headerAppender = (selector) => {
 }
 
 headerAppender("body")
+export {Header,headerAppender}
