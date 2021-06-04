@@ -1,3 +1,4 @@
+import axios from "axios"
 const Header = (title, date, temp) => {
   // TASK 1
   // ---------------------
@@ -29,7 +30,7 @@ const Header = (title, date, temp) => {
   temp_span.textContent = temp
 
   return headdiv
-  console.log("CEYDA")
+  //console.log("CEYDA")
 }
 
 const headerAppender = (selector) => {
@@ -39,6 +40,9 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+
+  const selected = document.querySelector(selector)
+  selected.appendChild(Header("NAME", "SURNAME", "DOB"))
 }
 
 export { Header, headerAppender }
