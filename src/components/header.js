@@ -1,4 +1,4 @@
-import axios from "axios" // DOUBLE CHECK THIS!!
+
 const Header = (title, date, temp) => {
   // TASK 1
   // ---------------------
@@ -33,6 +33,7 @@ const Header = (title, date, temp) => {
   //console.log("CEYDA")
 }
 
+
 const headerAppender = (selector) => {
   // TASK 2
   // ---------------------
@@ -45,4 +46,4 @@ const headerAppender = (selector) => {
   selected.appendChild(Header("NAME", "SURNAME", "DOB"))
 }
 
-export { Header, headerAppender }
+headerAppender("body")
